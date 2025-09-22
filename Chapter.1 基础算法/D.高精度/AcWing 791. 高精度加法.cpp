@@ -2,11 +2,8 @@
 #include <string>
 using namespace std;
 
-int main()
+string Add(string num1, string num2)
 {
-	string num1, num2;
-	cin >> num1 >> num2;
-
 	string ans{};
 
 	int num1_index = num1.size() - 1;
@@ -39,6 +36,14 @@ int main()
 	if (carry != 0)
 		ans = (char)(carry + '0') + ans;
 
-	cout << ans << endl;
+	return ans;
+}
+
+int main()
+{
+	string num1, num2;
+	cin >> num1 >> num2;
+
+	cout << Add(num1, num2) << endl;
 	return 0;
 }
