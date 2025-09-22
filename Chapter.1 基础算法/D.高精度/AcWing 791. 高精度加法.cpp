@@ -2,8 +2,6 @@
 #include <string>
 using namespace std;
 
-const int MAX_LENGTH = (1e5);
-
 int main()
 {
 	string num1, num2;
