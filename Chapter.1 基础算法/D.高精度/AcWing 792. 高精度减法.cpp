@@ -29,6 +29,31 @@ bool less_than(string num1, string num2)
 	return false;
 }
 
+string remove_front_zero(string number)
+{
+	// 删除前导0
+	int first_not_zero = 0;
+	int ans_len = number.length();
+	while (first_not_zero < ans_len && number[first_not_zero] == '0')
+	{
+		first_not_zero++;
+	}
+
+	string result{};
+
+	for (auto index = first_not_zero; index < ans_len; index++)
+	{
+		result += number[index];
+	}
+
+	if (!result.size())
+	{
+		result = "0";
+	}
+
+	return result;
+}
+
 /*
  * 需要保证num1 >= num2
  */
@@ -78,27 +103,7 @@ string Minus(string num1, string num2)
 		answer = (char)(current_digit + '0') + answer;
 	}
 
-	// 删除前导0
-	int first_not_zero = 0;
-	int ans_len = answer.length();
-	while (first_not_zero < ans_len && answer[first_not_zero] == '0')
-	{
-		first_not_zero++;
-	}
-
-	string extend_answer{};
-
-	for (auto index = first_not_zero; index < ans_len; index++)
-	{
-		extend_answer += answer[index];
-	}
-
-	if (!extend_answer.size())
-	{
-		extend_answer = "0";
-	}
-
-	return extend_answer;
+	return remove_front_zero(answer);
 }
 
 int main()
