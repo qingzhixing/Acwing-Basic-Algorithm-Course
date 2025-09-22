@@ -49,7 +49,11 @@
 			"ostream": "cpp",
 			"sstream": "cpp",
 			"stdexcept": "cpp",
-			"streambuf": "cpp"
+			"streambuf": "cpp",
+			"cerrno": "cpp",
+			"climits": "cpp",
+			"ios": "cpp",
+			"queue": "cpp"
 		}
 	}
 }
