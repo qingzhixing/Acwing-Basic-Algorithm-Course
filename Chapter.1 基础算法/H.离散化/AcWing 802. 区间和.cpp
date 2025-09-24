@@ -85,10 +85,10 @@ int main()
 		used_position.end());
 
 	// 进行加操作
-	for (auto operation : add_operations)
+	for (const auto [position, value] : add_operations)
 	{
-		auto target_index = FindFirstGE(operation.first);
-		position_data[target_index] += operation.second;
+		auto target_index = FindFirstGE(position);
+		position_data[target_index] += value;
 	}
 
 	// 求前缀和
@@ -98,10 +98,10 @@ int main()
 	}
 
 	// 进行查询操作
-	for (auto operation : query_operations)
+	for (const auto [left, right] : query_operations)
 	{
-		auto left_index = FindFirstGE(operation.first);
-		auto right_index = FindFirstGE(operation.second);
+		auto left_index = FindFirstGE(left);
+		auto right_index = FindFirstGE(right);
 
 		cout << prefix_sum[right_index] - prefix_sum[left_index - 1] << endl;
 	}
