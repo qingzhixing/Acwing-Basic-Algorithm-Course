@@ -53,7 +53,31 @@
 			"cerrno": "cpp",
 			"climits": "cpp",
 			"ios": "cpp",
-			"queue": "cpp"
+			"queue": "cpp",
+			"xiosbase": "cpp",
+			"xlocale": "cpp",
+			"xutility": "cpp",
+			"list": "cpp",
+			"charconv": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"format": "cpp",
+			"xfacet": "cpp",
+			"xhash": "cpp",
+			"xlocbuf": "cpp",
+			"xlocinfo": "cpp",
+			"xlocmes": "cpp",
+			"xlocmon": "cpp",
+			"xlocnum": "cpp",
+			"xloctime": "cpp",
+			"xmemory": "cpp",
+			"xstring": "cpp",
+			"stack": "cpp",
+			"cfloat": "cpp",
+			"cstring": "cpp",
+			"ctime": "cpp",
+			"locale": "cpp",
+			"xtr1common": "cpp"
 		}
 	}
 }
