@@ -8,6 +8,10 @@ struct Edge
 	int from;
 	int to;
 	int weight;
+	bool operator<(const Edge &other) const
+	{
+		return weight < other.weight;
+	}
 };
 
 const int MAX_N = 1e5 + 10;
@@ -26,7 +30,7 @@ int get_ancestor(int id)
 {
 	if (parent[id] != id)
 	{
-		parent[id] = get_ancestor(id);
+		parent[id] = get_ancestor(parent[id]);
 	}
 	return parent[id];
 }
@@ -49,6 +53,28 @@ int main()
 	}
 
 	// Kruskal
-	
+	for (auto edge : edges)
+	{
+		auto [from, to, weight] = edge;
+		int ancestor_from = get_ancestor(from);
+		int ancestor_to = get_ancestor(to);
+
+		if (ancestor_from != ancestor_to)
+		{
+			parent[ancestor_from] = ancestor_to;
+			edge_count++;
+			weight_sum += weight;
+		}
+	}
+
+	// 判断无解
+	// 如果加入边数 < n-1 说明不是连通图
+	if (edge_count < n - 1)
+	{
+		cout << "impossible" << endl;
+		return 0;
+	}
+	cout << weight_sum << endl;
+
 	return 0;
 }
