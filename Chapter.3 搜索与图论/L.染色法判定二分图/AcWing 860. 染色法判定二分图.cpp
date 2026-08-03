@@ -60,7 +60,7 @@ int main()
 		edges[v].push_back(u);
 	}
 
-	// 匈牙利染色
+	// 染色法判断二分图
 	for (int id = 1; id <= n; id++)
 	{
 		// 未染色才进行染色
