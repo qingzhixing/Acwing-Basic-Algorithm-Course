@@ -27,9 +27,13 @@ int main()
 		// 枚举当前所有质数进行筛选
 		for (int prime_idx = 0; primes[prime_idx] <= n / number; prime_idx++)
 		{
+			// 只用最小质因子筛选
+			// 此时 primes[prime_idx] <= number 的最小质因子
+			// 故 primes[prime_idx] * number 的最小质因子一定是 primes[prime_idx]
 			filtered[primes[prime_idx] * number] = true;
 			if (number % primes[prime_idx] == 0)
 			{
+				// 此时 primes[prime_idx] 一定是 number 的最小质因子
 				break;
 			}
 		}
