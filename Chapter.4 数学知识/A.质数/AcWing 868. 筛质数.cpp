@@ -12,6 +12,7 @@ int main()
 	int n;
 	cin >> n;
 
+	// 埃式筛法
 	// 枚举 2 ~ n 所有数字
 	for (int number = 2; number <= n; number++)
 	{
