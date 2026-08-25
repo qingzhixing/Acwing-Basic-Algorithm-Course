@@ -9,6 +9,7 @@ int phi(int number)
 	{
 		if (number % i == 0)
 		{
+			// result *= (1 - 1 / i);
 			result = result / i * (i - 1);
 			while (number % i == 0)
 			{
@@ -18,6 +19,7 @@ int phi(int number)
 	}
 	if (number > 1)
 	{
+		// result *= (1 - 1 / number);
 		result = result / number * (number - 1);
 	}
 	return result;
