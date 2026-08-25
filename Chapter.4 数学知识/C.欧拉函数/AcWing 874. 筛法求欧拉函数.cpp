@@ -40,12 +40,16 @@ long long eular_sum(int n)
 
 			// prime 此时为 prime * number 的最小质因子
 			filtered[prime * number] = true;
+
 			// prime 为 number 最小质因子
 			if (number % prime == 0)
 			{
+				// number * prime 和 number 质因子相同，求 phi 公式中只有 N 扩大了 prime 倍
 				phi[number * prime] = phi[number] * prime;
 				break;
 			}
+			// number * prime 和 number 质因子不同，多了一个当前的 prime
+			// 求 phi 公式中 N 扩大了 prime 倍, 还需要额外乘上一个 (1 - 1 / prime)
 			phi[number * prime] = phi[number] * (prime - 1);
 		}
 	}
